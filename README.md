@@ -12,11 +12,10 @@ Based on the data generated from FRCNN test, this program shows how the drone wi
 2. frcnn_test_info.txt / General information about the FRCNN test run.
 
 ## Developing Environment
-1. Windows 11
-2. Visual Studio 2022
-3. Unreal Engine v4.27.2
-4. Python v3.9
-
+- Windows 11
+- Visual Studio 2022
+- Unreal Engine v4.27.2
+- Python v3.9
    - AirSim binary v1.7.0
    - AirSim v1.6.0
    - pygame v2.1.2
