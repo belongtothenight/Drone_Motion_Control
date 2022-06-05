@@ -17,6 +17,9 @@ client = airsim.MultirotorClient()#temperary
 client.takeoffAsync().join()
 print('Drone take off')
 
+# Take single piece of photo
+abf.capture_single_picture()
+
 try:
     state = client.getMultirotorState()
 except msgpackrpc.error.RPCError:
@@ -39,30 +42,3 @@ client.moveByVelocityZAsync(0, 5, -10, 10, airsim.DrivetrainType.MaxDegreeOfFree
 #client.moveToPositionAsync(-10, 10, -10, 5).join()
 
 
-'''
-# Create image directory if it doesn't already exist
-try:
-    os.stat('./captured_image')
-except:
-    os.mkdir('./captured_image')
-
-# Export PNG Image
-# Image
-responses = client.simGetImages([airsim.ImageRequest("0", airsim.ImageType.Scene, False, False)])
-response = responses[0]
-
-# get numpy array
-img1d = np.fromstring(response.image_data_uint8, dtype=np.uint8)
-
-# reshape array to 4 channel image array H X W X 4
-img_rgb = img1d.reshape(response.height, response.width, 3)
-
-# original image is fliped vertically
-img_rgb = np.flipud(img_rgb)
-
-# write to png
-img_rgb = cv2.flip(img_rgb, 1)
-img_rgb = cv2.rotate(img_rgb, cv2.cv2.ROTATE_180)
-cv2.imwrite('./captured_image/1.png',img_rgb)
-print('Script Executed!')
-'''
