@@ -6,7 +6,7 @@ Author: Dachuan Chen
 ## Description
 Based on the data generated from FRCNN test, this program shows how the drone will fly according to it.
 
-- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) **This program is still under development**
+- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+'#f03c15') **This program is still under development**
 
 
 ## File Requirement
