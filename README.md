@@ -16,11 +16,12 @@ Based on the data generated from FRCNN test, this program shows how the drone wi
 2. Visual Studio 2022
 3. Unreal Engine v4.27.2
 4. Python v3.9
-   1. AirSim binary v1.7.0
-   2. AirSim v1.6.0
-   3. pygame v2.1.2
-   4. pynput v1.7.6
-   5. msgpack v1.0.4
+
+   - AirSim binary v1.7.0
+   - AirSim v1.6.0
+   - pygame v2.1.2
+   - pynput v1.7.6
+   - msgpack v1.0.4
 
 ## Developing Environment Setup
 ### Detail installation process
