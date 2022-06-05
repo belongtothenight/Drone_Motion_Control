@@ -53,5 +53,4 @@ Based on the data generated from FRCNN test, this program shows how the drone wi
 ## Adjustment Log
 1. v1 / Prepare the simulating environment coded by CoderSpace(YT)
 2. v1 / Achieved basic control of AirSim drone
-3.
 
