@@ -11,7 +11,7 @@ def airsim_conn():
     try:
         client.confirmConnection()
     except msgpackrpc.error.TransportError:
-        print('Unreal Engine isn\'t running or Project isn\'t playing...')
+        print('\nUnreal Engine isn\'t running or Project isn\'t playing...\n')
 
 
 # Initialize AirSim simulator
