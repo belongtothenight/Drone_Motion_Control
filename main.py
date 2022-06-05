@@ -7,13 +7,11 @@ import numpy as np
 import cv2
 import time
 import control_method
+import airsim_basic_function as abf
 
 # connect to the AirSim simulator
-client = airsim.MultirotorClient()
-client.confirmConnection()
-client.reset()
-client.enableApiControl(True)
-client.armDisarm(True)
+abf.drone_initialize()
+client = airsim.MultirotorClient()#temperary
 
 # Async methods returns Future. Call join() to wait for task to complete.
 client.takeoffAsync().join()
