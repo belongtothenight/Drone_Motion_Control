@@ -1,6 +1,6 @@
 # IITF_FinalProject_DroneMotionControl
-Developing start in 2022.06.05 09:50
-Code version: v2.0.0
+Developing start in 2022.06.05 11:30
+Code version: v2.1.0
 Author: Dachuan Chen
 
 ## Description
@@ -51,6 +51,9 @@ Based on the data generated from FRCNN test, this program shows how the drone wi
 3. Land beside the target and take a picture of it.
 
 ## Adjustment Log
-1. v1 / Prepare the simulating environment coded by CoderSpace(YT)
-2. v1 / Achieved basic control of AirSim drone
+1. v1.0.0 / Prepare the simulating environment coded by CoderSpace(YT). 
+2. v1.0.0 / Achieved basic control of AirSim drone.
+3. v2.0.0 / Abandon 3D engine build in v1.0.0.
+4. v2.0.0 / Established AirSim and Unreal Engine 4 as new simulation platform. 
+5. v2.1.0 / Move functions away from main.
 

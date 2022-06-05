@@ -10,5 +10,3 @@ abf.capture_single_picture()
 
 # Perform drone movements
 dm.drone_movement()
-
-#1
