@@ -6,8 +6,12 @@ Author: Dachuan Chen
 ## Description
 Based on the data generated from FRCNN test, this program shows how the drone will fly according to it.
 
-- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+'#f03c15') **This program is still under development**
-
+**This program is still under development**
+'''ruby
+require 'redcarpet'
+markdown = Redcarpet.new("This program is still under development")
+puts markdown.to_html
+'''
 
 ## File Requirement
 1. target_coordinate.csv / Detail data of FRCNN labeled coordinate.
