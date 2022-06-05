@@ -37,7 +37,7 @@ Based on the data generated from FRCNN test, this program shows how the drone wi
 1. Find "filename.sln" in your project environment directory and open with visual studio 2022 to open. (./AirSim-master/Unreal/Environments/'Custom Environment Name'/)
 2. Press F5 in visual studio to startup the project.
 3. Press Alt+P in Unreal Engine to run the project. Both visual studio and Unreal Engine needs to stay in current state.
-4. Make sure having installed airsim in cmd and IDE, put your codes into your IDE and execute.
+4. Make sure having installed airsim in cmd and IDE, interpreter has all the necessary packages. Then, run the "main.py" file. 
 
 ### More info
 1. https://microsoft.github.io/AirSim/
