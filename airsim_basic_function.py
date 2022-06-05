@@ -2,35 +2,69 @@ import airsim
 import msgpackrpc.error
 import cv2
 import os
+import sys
 import numpy as np
 
 client = airsim.MultirotorClient()
 
 
 def airsim_conn():
+    """
+    Description:
+        Confirm connection with Unreal Engine 4, and deal with connection error.
+    parameter:
+        Input:
+            None
+        Output:
+            None
+    Link:
+        None
+    """
     try:
         client.confirmConnection()
     except msgpackrpc.error.TransportError:
-        print('Unreal Engine isn\'t running or Project isn\'t playing...')
+        print('\nairsim_basic_function-> Unreal Engine isn\'t running or Project isn\'t playing...\n')
 
 
-# Initialize AirSim simulator
 def drone_initialize():
+    """
+    Description:
+        Initialize AirSim simulator in Unreal Engine 4.
+    parameter:
+        Input:
+            None
+        Output:
+            None
+    Link:
+        https://microsoft.github.io/AirSim/apis/#python-quickstart
+    """
     airsim_conn()
     client.reset()
-    print('Environment Reset!')
+    print('airsim_basic_function-> Environment Reset!')
     client.enableApiControl(True)
     client.armDisarm(True)
 
 
-# Take one PGN photo
-def capture_single_picture():
+def capture_single_picture(directory, image_name):
+    """
+    Description:
+        Take one PGN photo and export to assigned directory.
+    parameter:
+        Input:
+            directory: (str) The directory where you want to save the image. Format = './directory_name'
+            image_name: (str) The name of the image. Format = 'image_name'
+        Output:
+            None
+    Link:
+        https://stackoverflow.com/questions/57150426/what-is-printf
+        https://microsoft.github.io/AirSim/image_apis/#using-airsim-images-with-numpy
+    """
     airsim_conn()
     # Create image directory if it doesn't already exist
     try:
-        os.stat('./captured_image')
+        os.stat(directory)
     except:
-        os.mkdir('./captured_image')
+        os.mkdir(directory)
 
     # Export PNG Image
     # Image
@@ -51,5 +85,6 @@ def capture_single_picture():
     img_rgb = cv2.rotate(img_rgb, cv2.cv2.ROTATE_180)
 
     # write to png
-    cv2.imwrite('./captured_image/1.png', img_rgb)
-    print('Screenshot Captured!')
+    cv2.imwrite(f'{directory}/{image_name}.png', img_rgb)
+    print('airsim_basic_function-> Screenshot Captured!')
+    print(f'airsim_basic_function-> Store at {directory}/{image_name}.png')

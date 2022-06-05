@@ -1,0 +1,119 @@
+
+===================================================================================
+
+File Info
+Image Path: ./test_images
+Export Time: 2022/05/29, 21:32:44(UTC+0)
+cols = ["filename", "tag", "x1", "y1", "x2", "y2", "cx", "cy", "Delta x", "Delta y", "delta x diff", "delta y diff"]
+
+===================================================================================
+
+File Count
+Total File Count : 1889
+Total Identified File Count : 1827
+Total Undentified File Count : 62
+Test File Count(close) : 400
+Test File Count(far1) : 400
+Test File Count(far2) : 400
+Test File Count(test) : 689
+
+===================================================================================
+
+Percentage
+Test Image Identify Rate: 99.56458635703919%
+Total Identified Rate : 100.0%
+Identified Test File Rate(close) : 100.0%
+Identified Test File Rate(far1) : 97.5%
+Identified Test File Rate(far2) : 103.0%
+Identified Test File Rate(test) : 112.91727140783745%
+Total Undentified Rate : 0.0%
+Undentified Test File Rate(close) : 0.0%
+Undentified Test File Rate(far1) : 2.500000000000002%
+Undentified Test File Rate(far2) : -3.0000000000000027%
+Undentified Test File Rate(test) : -12.91727140783745%
+
+===================================================================================
+
+Identified Object Count
+Identified Close Object Count(includes duplicates): 400
+Identified Far Object Count(includes duplicates): 390
+Identified Far Object Count(includes duplicates): 412
+Identified Test Object Count(includes duplicates): 778
+Identified Total Object Count(includes duplicates): 1980
+
+===================================================================================
+
+Unidentified Object Count
+Unidentified Close Object Count(includes duplicates): 0
+Unidentified Far Object Count(includes duplicates): 42
+Unidentified Far Object Count(includes duplicates): 17
+Unidentified Test Object Count(includes duplicates): 3
+Unidentified Total Object Count(includes duplicates): 62
+
+===================================================================================
+
+Delta
+Train Image Average Delta X close: 251.3349868767695
+Train Image Average Delta Y close: 292.98721302892784
+Train Image Average Delta X far1: 125.00375362491597
+Train Image Average Delta Y far1: 154.95745783169687
+Train Image Average Delta X far2: 125.64062577268253
+Train Image Average Delta Y far2: 125.62500000291206
+Test Image Average Delta X: 199.41085003120872
+Test Image Average Delta Y: 212.60865338928107
+
+===================================================================================
+
+Distance
+Distance calculate with close x data (cm): 123.7714374406655
+Distance calculate with close y data (cm): 113.20272166776486
+Distance calculate with close xy data (cm): 118.48707955421517
+Distance calculate with average close data (cm): 118.48707955421519
+Distance calculate with far x data1 (cm): 638.0955587287639
+Distance calculate with far y data1 (cm): 548.8181243143537
+Distance calculate with far xy data1 (cm): 593.4568415215587
+Distance calculate with average far data1 (cm): 593.4568415215587
+Distance calculate with far x data2 (cm): 634.8610532774527
+Distance calculate with far y data2 (cm): 676.9628764476902
+Distance calculate with far xy data2 (cm): 655.9119648625714
+Distance calculate with average far data2 (cm): 655.9119648625714
+Distance calculate with mixed xy data (cm): 359.82045748769053
+
+===================================================================================
+
+Parameter
+Parameters: round_digit: {:.2f}
+Parameters: close_size: 156
+Parameters: far_size: 400
+Parameters: mix_size: 278.0
+Parameters: avg_delta_calculation_boundary1: 5000
+Parameters: avg_delta_calculation_boundary2: 6000
+Parameters: avg_delta_calculation_boundary3: 7000
+
+===================================================================================
+
+Variable
+file_count1 : 400
+file_count2 : 400
+file_count3 : 400
+file_count4 : 689
+coordinate_count1 : 400
+coordinate_count2 : 390
+coordinate_count3 : 412
+coordinate_count0 : 1980
+coordinate_count1 : 400
+coordinate_count2 : 390
+coordinate_count3 : 412
+coordinate_count4 : 778
+coordinate_count0 : 1980
+object_identified_flag1 : False
+object_identified_flag2 : False
+object_identified_flag3 : False
+object_identified_flag4 : False
+object_unidentified_count1 : 0
+object_unidentified_count2 : 42
+object_unidentified_count3 : 17
+object_unidentified_count4 : 3
+object_unidentified_count0 : 62
+
+===================================================================================
