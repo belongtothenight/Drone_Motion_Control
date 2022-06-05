@@ -14,21 +14,21 @@ cor, t_row, t_col = rf.get_csv_data_single_row_adj_element(coordinate, 0, 2, 11)
         print('main.py-> total column: ', t_col)
     '''
 
-# Define drone_movement():
+# Take off
 client = airsim.MultirotorClient()
-
-# Async methods returns Future. Call join() to wait for task to complete.
 client.takeoffAsync().join()
 print('drone_movement.py-> Drone take off')
 
+# Approach filming location
 
-# Get drone state
-state = client.getMultirotorState()
-s = pprint.pformat(state)
-print("drone_movement.py-> state: %s" % s)
+# Approach target
+
+# Landing
 
 
 
+'''
+# z axis number is what each every command needs to maintained.
 print('drone_movement.py-> Move up...')
 client.moveByVelocityZAsync(0, 0, -10, 10, airsim.DrivetrainType.MaxDegreeOfFreedom, airsim.YawMode(True, 0)).join()
 print('drone_movement.py-> Move right...')
@@ -38,6 +38,13 @@ client.moveByVelocityZAsync(5, 0, 5, 10, airsim.DrivetrainType.MaxDegreeOfFreedo
 
 client.moveByVelocityZAsync(0, 0, -10, 10, airsim.DrivetrainType.MaxDegreeOfFreedom, airsim.YawMode(True, 0)).join()
 client.moveByVelocityZAsync(0, 5, -10, 10, airsim.DrivetrainType.MaxDegreeOfFreedom, airsim.YawMode(True, 0)).join()
-# z axis number is what each every command needs to maintained.
 
-# client.moveToPositionAsync(-10, 10, -10, 5).join()
+
+client.moveToPositionAsync(-10, 10, -10, 5).join()
+# Async methods returns Future. Call join() to wait for task to complete.
+
+# Get drone state
+state = client.getMultirotorState()
+s = pprint.pformat(state)
+print("drone_movement.py-> state: %s" % s)
+'''
