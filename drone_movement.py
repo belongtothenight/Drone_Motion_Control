@@ -9,10 +9,12 @@ def drone_movement():
     client.takeoffAsync().join()
     print('Drone take off')
 
+    '''
     # Get drone state
     state = client.getMultirotorState()
     s = pprint.pformat(state)
     print("state: %s" % s)
+    '''
 
     '''
     print('Move up...')

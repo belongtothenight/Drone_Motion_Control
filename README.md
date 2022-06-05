@@ -1,4 +1,4 @@
-# IITF_FinalProject_DroneMotionControl
+# DroneMotionControl
 ### **This program is still under development**
 - Developing start in 2022.06.05 16:02
 - Code version: v2.2.0
