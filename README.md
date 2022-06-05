@@ -1,10 +1,13 @@
 # IITF_FinalProject_DroneMotionControl
-Developing start in 2022.06.05 11:30
-Code version: v2.1.0
+Developing start in 2022.06.05 15:28
+Code version: v2.1.1
 Author: Dachuan Chen
 
 ## Description
 Based on the data generated from FRCNN test, this program shows how the drone will fly according to it.
+
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)
+**This program is still under development**
 
 ## File Requirement
 1. target_coordinate.csv / Detail data of FRCNN labeled coordinate.
@@ -15,11 +18,11 @@ Based on the data generated from FRCNN test, this program shows how the drone wi
 2. Visual Studio 2022
 3. Unreal Engine v4.27.2
 4. Python v3.9
-5. pip v21.3.1
-6. AirSim binary v1.7.0
-7. AirSim v1.6.0
-8. pygame v2.1.2
-9. pynput v1.7.6
+   1. AirSim binary v1.7.0
+   2. AirSim v1.6.0
+   3. pygame v2.1.2
+   4. pynput v1.7.6
+   5. msgpack v1.0.4
 
 ## Developing Environment Setup
 ### Detail installation process
@@ -56,4 +59,5 @@ Based on the data generated from FRCNN test, this program shows how the drone wi
 3. v2.0.0 / Abandon 3D engine build in v1.0.0.
 4. v2.0.0 / Established AirSim and Unreal Engine 4 as new simulation platform. 
 5. v2.1.0 / Move functions away from main.
+6. v2.1.1 / Match the missing developing environment.
 
