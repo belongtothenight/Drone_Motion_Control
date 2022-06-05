@@ -1,8 +1,20 @@
 import airsim
 import pprint
+import read_file as rf
 
 
-#def drone_movement():
+# Read single row of data
+print('drone_movement.py-> reading coordinate...')
+coordinate = rf.read_csv('./test_coordinate/target_coordinate.csv')
+cor, t_row, t_col = rf.get_csv_data_single_row_adj_element(coordinate, 0, 2, 11)
+'''
+    print_csv_data_single_row_adj_element() function test
+        print('main.py-> coordinate array: ', cor)
+        print('main.py-> total row: ', t_row)
+        print('main.py-> total column: ', t_col)
+    '''
+
+# Define drone_movement():
 client = airsim.MultirotorClient()
 
 # Async methods returns Future. Call join() to wait for task to complete.

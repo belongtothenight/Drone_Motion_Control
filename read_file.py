@@ -27,7 +27,7 @@ def read_csv(program):
     return rows
 
 
-def print_csv_data(array, row_number):
+def print_csv_data_single_row(array, row_number):
     """
     Description:
         Print out all the elements of single row from the target 2 order array.
@@ -45,4 +45,45 @@ def print_csv_data(array, row_number):
             print('read_file.py-> Printing read data: ' + array[row_number][i])
         except IndexError:
             # print('main.py-> Finished reading data.')
-            break
+            pass
+
+
+def get_csv_data_single_row_adj_element(array, row_number, start_element_number, end_element_number):
+    """
+    Description:
+        Print and return desire elements of single row from the target 2 order array.
+    parameter:
+        Input:
+            array: (str/2nd.arr) Target array name.
+            row_number: (int) Target row number.
+            start_element_number: (int) First required element index.
+            end_element_number: (int) Last required element index.
+        Output:
+            coordinate_array: (str/arr) Array storing required elements.
+            total_row_count: (int) Total number of row in target csv file.
+            total_column_count: (int) Total number of column in target csv file.
+    Link:
+        https://stackoverflow.com/questions/16548668/iterating-over-a-2-dimensional-python-list
+        https://stackabuse.com/python-get-number-of-elements-in-a-list/
+        https://www.codingem.com/python-how-to-return-multiple-values/
+    """
+    coordinate_array = []
+    total_row_count = len(range(len(array)))
+    total_column_count = 12
+    #print('read_file.py-> Total row count:' + str(total_row_count))
+    #print('read_file.py-> Total column count:' + str(total_column_count))
+    i = start_element_number
+    if start_element_number >= 0 and end_element_number < total_column_count:
+        while start_element_number <= i <= end_element_number:
+            '''
+            try:
+                print('read_file.py-> Printing read data: ' + array[row_number][i])
+            except IndexError:
+                # print('main.py-> Finished reading data.')
+                pass
+            '''
+            coordinate_array.append(array[row_number][i])
+            i += 1
+    else:
+        print('read_file.py-> Parameter Error!!!')
+    return coordinate_array, total_row_count, total_column_count
