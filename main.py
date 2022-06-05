@@ -1,16 +1,16 @@
 import airsim_basic_function as abf
 import control_algorithm as ca
-#import drone_movement
 import read_file as rf
 import subprocess
 import sys
 import os
 
 
+'''
 def spawn_program_and_die(program, exit_code=0):
     """
     Description:
-        Run another python script and close it after it's finished
+        Run another python script and close it after it's finished. It's not working somehow.
     Parameter:
         Input:
             program: (str) Execute program.
@@ -21,6 +21,7 @@ def spawn_program_and_die(program, exit_code=0):
     """
     subprocess.Popen(program)
     sys.exit(exit_code)
+'''
 
 
 if __name__ == '__main__':
@@ -34,7 +35,7 @@ if __name__ == '__main__':
             None
     Link:
         https://stackoverflow.com/questions/16548668/iterating-over-a-2-dimensional-python-list
-        
+        https://www.delftstack.com/howto/python/python-run-another-python-script/
     """
     # Initialize
     print('main.py-> initializing...')
@@ -46,7 +47,7 @@ if __name__ == '__main__':
 
     # Perform drone movements
     print('main.py-> moving drone...')
-    spawn_program_and_die(['python', 'drone_movement.py'])
+    exec(open("drone_movement.py").read())
 
 """
 Description:
