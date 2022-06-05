@@ -17,8 +17,8 @@ Based on the data generated from FRCNN test, this program shows how the drone wi
 - Unreal Engine v4.27.2
 - AirSim binary v1.7.0
 - Python v3.9
-   - AirSim v1.6.0 (PyCharm/cmd)
-   - pygame v2.1.2 (PyCharm/cmd)
+   - AirSim v1.6.0 (PyCharm Interpreter/cmd)
+   - pygame v2.1.2 (PyCharm Interpreter/cmd)
    - msgpack-rpc-python (cmd)
 
 ## Developing Environment Setup
