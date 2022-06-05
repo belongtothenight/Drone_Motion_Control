@@ -8,12 +8,18 @@ import cv2
 import time
 import control_method
 
+<<<<<<< Updated upstream
 # connect to the AirSim simulator
 client = airsim.MultirotorClient()
 client.confirmConnection()
 client.reset()
 client.enableApiControl(True)
 client.armDisarm(True)
+=======
+
+# Initialize
+abf.drone_initialize()
+>>>>>>> Stashed changes
 
 # Async methods returns Future. Call join() to wait for task to complete.
 client.takeoffAsync().join()
