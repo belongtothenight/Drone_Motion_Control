@@ -15,13 +15,33 @@ def read_csv(program):
         https://realpython.com/python-return-statement/
     """
     file = open(program)
-    print('read_file.py: csv file opened')
+    print('read_file.py-> csv file opened')
     csvreader = csv.reader(file)
-    print('read_file.py: csv file read')
+    print('read_file.py-> csv file read')
     rows = []
     for row in csvreader:
         rows.append(row)
-    print('read_file.py: coordinate data appended')
-    #print(rows)
+    print('read_file.py-> coordinate data appended')
+    # print(rows)
     file.close()
     return rows
+
+
+def print_csv_data(array, row_number):
+    """
+    Description:
+
+    parameter:
+        Input:
+
+        Output:
+
+    Link:
+        https://stackoverflow.com/questions/16548668/iterating-over-a-2-dimensional-python-list
+    """
+    for i in range(len(array)):
+        try:
+            print('read_file.py-> Printing read data: ' + array[row_number][i])
+        except IndexError:
+            # print('main.py-> Finished reading data.')
+            break

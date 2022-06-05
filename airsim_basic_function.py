@@ -2,6 +2,7 @@ import airsim
 import msgpackrpc.error
 import cv2
 import os
+import sys
 import numpy as np
 
 client = airsim.MultirotorClient()
@@ -22,7 +23,7 @@ def airsim_conn():
     try:
         client.confirmConnection()
     except msgpackrpc.error.TransportError:
-        print('\nairsim_basic_function: Unreal Engine isn\'t running or Project isn\'t playing...\n')
+        print('\nairsim_basic_function-> Unreal Engine isn\'t running or Project isn\'t playing...\n')
 
 
 def drone_initialize():
@@ -39,7 +40,7 @@ def drone_initialize():
     """
     airsim_conn()
     client.reset()
-    print('airsim_basic_function: Environment Reset!')
+    print('airsim_basic_function-> Environment Reset!')
     client.enableApiControl(True)
     client.armDisarm(True)
 
@@ -85,5 +86,5 @@ def capture_single_picture(directory, image_name):
 
     # write to png
     cv2.imwrite(f'{directory}/{image_name}.png', img_rgb)
-    print('airsim_basic_function: Screenshot Captured!')
-    print(f'airsim_basic_function: Store at {directory}/{image_name}.png')
+    print('airsim_basic_function-> Screenshot Captured!')
+    print(f'airsim_basic_function-> Store at {directory}/{image_name}.png')

@@ -33,26 +33,26 @@ if __name__ == '__main__':
         Output:
             None
     Link:
-        None
+        https://stackoverflow.com/questions/16548668/iterating-over-a-2-dimensional-python-list
     """
     # Read Coordinate
-    print('main.py: reading coordinate...')
+    print('main.py-> reading coordinate...')
     coordinate = rf.read_csv('./test_coordinate/target_coordinate.csv')
-    print('main.py: coordinate read')
-    print(coordinate)
+    print('main.py-> coordinate read')
+    rf.print_csv_data(coordinate, 0)
 
     # Initialize
-    print('main.py: initializing...')
+    print('main.py-> initializing...')
     abf.drone_initialize()
-    print('main.py: initialized')
+    print('main.py-> initialized')
 
     # Take single piece of photo
-    print('main.py: taking picture...')
+    print('main.py-> taking picture...')
     abf.capture_single_picture('./captured_image', '1')
-    print('main.py: picture taken')
+    print('main.py-> picture taken')
 
     # Perform drone movements
-    # print('moving drone...')
+    # print('main.py-> moving drone...')
     # spawn_program_and_die(['python', 'drone_movement.py'])
 
 """
