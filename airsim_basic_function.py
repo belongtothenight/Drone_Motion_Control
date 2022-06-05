@@ -4,18 +4,28 @@ import cv2
 import os
 import numpy as np
 
-# connect to the AirSim simulator
+client = airsim.MultirotorClient()
+
+
+def airsim_conn():
+    try:
+        client.confirmConnection()
+    except msgpackrpc.error.TransportError:
+        print('Unreal Engine isn\'t running or Project isn\'t playing...')
+
+
+# Initialize AirSim simulator
 def drone_initialize():
-    client = airsim.MultirotorClient()
-    client.confirmConnection()
+    airsim_conn()
     client.reset()
     print('Environment Reset!')
     client.enableApiControl(True)
     client.armDisarm(True)
 
+
+# Take one PGN photo
 def capture_single_picture():
-    client = airsim.MultirotorClient()
-    client.confirmConnection()
+    airsim_conn()
     # Create image directory if it doesn't already exist
     try:
         os.stat('./captured_image')
@@ -36,10 +46,10 @@ def capture_single_picture():
     # original image is fliped vertically
     img_rgb = np.flipud(img_rgb)
 
-    # write to png
+    # Flip and rotate image
     img_rgb = cv2.flip(img_rgb, 1)
     img_rgb = cv2.rotate(img_rgb, cv2.cv2.ROTATE_180)
+
+    # write to png
     cv2.imwrite('./captured_image/1.png', img_rgb)
     print('Screenshot Captured!')
-
-# connection retry function
