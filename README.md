@@ -1,7 +1,7 @@
 # IITF_FinalProject_DroneMotionControl
 ### **This program is still under development**
-- Developing start in 2022.06.05 15:28
-- Code version: v2.1.1
+- Developing start in 2022.06.05 16:02
+- Code version: v2.2.0
 - Author: Dachuan Chen
 
 ## Description
@@ -51,6 +51,13 @@ Based on the data generated from FRCNN test, this program shows how the drone wi
 2. Execute control algorithm to approach target.
 3. Land beside the target and take a picture of it.
 
+## File Structure
+- main.py
+  - airsim_basic_function.py
+  - control_algorithm.py
+  - drone_movement.py
+  - read_file.py
+
 ## Adjustment Log
 1. v1.0.0 / Prepare the simulating environment coded by CoderSpace(YT). 
 2. v1.0.0 / Achieved basic control of AirSim drone.
@@ -58,4 +65,6 @@ Based on the data generated from FRCNN test, this program shows how the drone wi
 4. v2.0.0 / Established AirSim and Unreal Engine 4 as new simulation platform. 
 5. v2.1.0 / Move functions away from main.
 6. v2.1.1 / Match the missing developing environment.
+7. v2.2.0 / Add "File Structure" in "README.md".
+8. v2.2.0 / Enable reading data from ".csv" file.
 
