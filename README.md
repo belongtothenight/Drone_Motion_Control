@@ -1,18 +1,11 @@
 # IITF_FinalProject_DroneMotionControl
-Developing start in 2022.06.05 15:28
-Code version: v2.1.1
-Author: Dachuan Chen
+### **This program is still under development**
+- Developing start in 2022.06.05 15:28
+- Code version: v2.1.1
+- Author: Dachuan Chen
 
 ## Description
 Based on the data generated from FRCNN test, this program shows how the drone will fly according to it.
-
-**This program is still under development**
-
-'''ruby
-require 'redcarpet'
-markdown = Redcarpet.new("This program is still under development")
-puts markdown.to_html
-'''
 
 ## File Requirement
 1. target_coordinate.csv / Detail data of FRCNN labeled coordinate.
