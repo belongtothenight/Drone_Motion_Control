@@ -1,7 +1,4 @@
 import airsim_basic_function as abf
-import subprocess
-import sys
-import os
 
 
 if __name__ == '__main__':

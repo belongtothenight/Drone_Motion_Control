@@ -131,22 +131,23 @@ def capture_single_picture(directory, image_name):
     print(f'airsim_basic_function.py-> Store at {directory}/{image_name}.png')
 
 
-def adjust_camera_angle(angle, camera_nametag):
+def adjust_camera_angle(angle, camera_name_tag):
     """
     Description:
-
+        Adjust the selected camera to change its pitch to desire angle.
     parameter:
         Input:
-
+            angle: (int) 0 as front, negative numbers as down, positive numbers as up.
+            camera_name_tag: (int) 0 as front camera. For 1, 2, 3, check https://microsoft.github.io/AirSim/.
         Output:
-
+            None
     Link:
         https://github.com/microsoft/AirSim/blob/master/PythonClient/computer_vision/cv_mode.py
     """
-    #airsim.wait_key(f"drone_movement.py-> Press any key to set camera-0 gimbal to {angle}-degree pitch")
+    # airsim.wait_key(f"drone_movement.py-> Press any key to set camera-0 gimbal to {angle}-degree pitch")
     camera_pose = airsim.Pose(airsim.Vector3r(0, 0, 0), airsim.to_quaternion(math.radians(angle), 0, 0))  # radians
-    client.simSetCameraPose(f"{camera_nametag}", camera_pose)
-    #airsim.wait_key('drone_movement.py-> Press any key to get camera parameters')
+    client.simSetCameraPose(f"{camera_name_tag}", camera_pose)
+    # airsim.wait_key('drone_movement.py-> Press any key to get camera parameters')
     for camera_name in range(5):
         camera_info = client.simGetCameraInfo(str(camera_name))
         # print("CameraInfo %d:" % camera_name)
@@ -156,14 +157,16 @@ def adjust_camera_angle(angle, camera_nametag):
 def drone_move_to_position(x, y, z, velocity):
     """
     Description:
-
+        Simplify original code and reverse z axis direction.
     parameter:
         Input:
-
+            x: (int) front-back
+            y: (int) left-right
+            z: (int) up-down
         Output:
-
+            None
     Link:
-
+        None
     """
     client.moveToPositionAsync(x, y, -z, velocity).join()
 
