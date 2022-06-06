@@ -2,7 +2,6 @@ import airsim
 import msgpackrpc.error
 import cv2
 import os
-import sys
 import numpy as np
 
 client = airsim.MultirotorClient()
@@ -58,7 +57,8 @@ def drone_takeoff(z, duration):
         None
     """
     client.takeoffAsync().join()
-    client.moveByVelocityZAsync(0, 0,z, duration, airsim.DrivetrainType.MaxDegreeOfFreedom, airsim.YawMode(True, 0)).join()
+    client.moveByVelocityZAsync(0, 0, z, duration, airsim.DrivetrainType.MaxDegreeOfFreedom,
+                                airsim.YawMode(True, 0)).join()
     print('airsim_basic_function.py-> Drone takeoff')
 
 
@@ -74,7 +74,8 @@ def drone_landing(z, duration):
     Link:
         None
     """
-    client.moveByVelocityZAsync(0, 0, z, duration, airsim.DrivetrainType.MaxDegreeOfFreedom, airsim.YawMode(True, 0)).join()
+    client.moveByVelocityZAsync(0, 0, z, duration, airsim.DrivetrainType.MaxDegreeOfFreedom,
+                                airsim.YawMode(True, 0)).join()
     client.landAsync().join()
     print('drone_movement.py-> Drone landed')
 

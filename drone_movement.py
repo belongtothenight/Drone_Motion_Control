@@ -1,5 +1,3 @@
-import airsim
-import pprint
 import read_file as rf
 import airsim_basic_function as abf
 
@@ -18,7 +16,8 @@ abf.drone_takeoff(-10, 5)
 '''
 Use center coordinate to adjust detail relative coordinate.
 Use the distance times a value as actual direct 
-distance, and use known altitude, to calculate x and y movement to reach filming coordinate. 
+distance, and use known altitude, to calculate x and y movement to reach filming coordinate.
+Assume current location are the picture taking coordinate (x,y) 
 '''
 
 # Approach target
