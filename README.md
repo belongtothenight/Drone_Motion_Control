@@ -31,6 +31,7 @@ Based on the data generated from FRCNN test, this program shows how the drone wi
 2. No need to add any plugin in Unreal Engine 4 to do further coding.
 3. AirSim is under heavy development, try updating to get new features and possible bug fixes.
 4. The installation is ought for Windows 10, but visual studio still require about the same settings in Windows 11.
+5. When unzipping AirSim, try not to do it in disk C (system disk).
 
 ### Start up execution environment
 1. Find "filename.sln" in your project environment directory and open with visual studio 2022 to open. (./AirSim-master/Unreal/Environments/'Custom Environment Name'/)
