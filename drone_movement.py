@@ -1,6 +1,7 @@
 import airsim
 import pprint
 import read_file as rf
+import airsim_basic_function as abf
 
 
 # Read single row of data
@@ -11,9 +12,7 @@ line = rf.read_txt('./test_coordinate/frcnn_test_info.txt', 79)
 distance = rf.line_split(line, 7)
 
 # Take off
-client = airsim.MultirotorClient()
-client.takeoffAsync().join()
-print('drone_movement.py-> Drone take off')
+abf.drone_takeoff(-10, 5)
 
 # Approach filming location
 '''
@@ -27,29 +26,6 @@ distance, and use known altitude, to calculate x and y movement to reach filming
 Use data above to locate drone at the top center of car.
 '''
 
-
 # Landing
+abf.drone_landing(10, 5)
 
-
-
-'''
-# z axis number is what each every command needs to maintained.
-print('drone_movement.py-> Move up...')
-client.moveByVelocityZAsync(0, 0, -10, 10, airsim.DrivetrainType.MaxDegreeOfFreedom, airsim.YawMode(True, 0)).join()
-print('drone_movement.py-> Move right...')
-client.moveByVelocityZAsync(0, 5, 0, 5, airsim.DrivetrainType.MaxDegreeOfFreedom, airsim.YawMode(True, 0)).join()
-print('drone_movement.py-> Move front...')
-client.moveByVelocityZAsync(5, 0, 5, 10, airsim.DrivetrainType.MaxDegreeOfFreedom, airsim.YawMode(True, 0)).join()
-
-client.moveByVelocityZAsync(0, 0, -10, 10, airsim.DrivetrainType.MaxDegreeOfFreedom, airsim.YawMode(True, 0)).join()
-client.moveByVelocityZAsync(0, 5, -10, 10, airsim.DrivetrainType.MaxDegreeOfFreedom, airsim.YawMode(True, 0)).join()
-
-
-client.moveToPositionAsync(-10, 10, -10, 5).join()
-# Async methods returns Future. Call join() to wait for task to complete.
-
-# Get drone state
-state = client.getMultirotorState()
-s = pprint.pformat(state)
-print("drone_movement.py-> state: %s" % s)
-'''
