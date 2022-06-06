@@ -15,7 +15,7 @@ def read_csv(program):
         https://realpython.com/python-return-statement/
     """
     file = open(program)
-    print('read_file.py-> csv file opened')
+    #print('read_file.py-> csv file opened')
     csvreader = csv.reader(file)
     print('read_file.py-> csv file read')
     rows = []
@@ -107,7 +107,7 @@ def read_txt(program, line_number):
             line = f.readline()
             # print('read_file.py-> Line' + str(i) + ': ' + line)
             i += 1
-        print('read_file.py-> finished reading txt')
+        print('read_file.py-> txt file read')
     return line
 
 
