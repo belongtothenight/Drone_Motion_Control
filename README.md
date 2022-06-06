@@ -1,6 +1,6 @@
 # DroneMotionControl
-- Developing start in 2022.06.06 13:20
-- Code version: v3.5.0
+- Developing start in 2022.06.06 23:29
+- Code version: v3.5.1
 - Author: Dachuan Chen
 
 ## Description
@@ -51,10 +51,10 @@ Based on the data generated from FRCNN test, this program shows how the drone wi
 
 ## File Structure
 - main.py
-  - airsim_basic_function.py
-  - control_algorithm.py
   - drone_movement.py
-  - read_file.py
+    - airsim_basic_function.py
+    - control_algorithm.py
+    - read_file.py
 
 ## Adjustment Log
 1. v1.0.0 / Prepare the simulating environment coded by CoderSpace(YT). 
@@ -71,6 +71,7 @@ Based on the data generated from FRCNN test, this program shows how the drone wi
 12. v3.3.0 / Finish "drone_movement".
 13. v3.4.0 / Fill all the empty places left in function description.
 14. v3.5.0 / Program proved to work.
+15. v3.5.1 / File Structure update.
 
 ## Contect
 Email: dachuan516@gmail.com
