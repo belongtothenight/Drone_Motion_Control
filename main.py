@@ -39,10 +39,6 @@ if __name__ == '__main__':
     print('main.py-> initializing...')
     abf.drone_initialize()
 
-    # Take single piece of photo
-    print('main.py-> taking picture...')
-    abf.capture_single_picture('./captured_image', '1')
-
     # Perform drone movements
     print('main.py-> moving drone...')
     exec(open("drone_movement.py").read())

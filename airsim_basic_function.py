@@ -3,8 +3,11 @@ import msgpackrpc.error
 import cv2
 import os
 import numpy as np
+import math
+import pprint
 
 client = airsim.MultirotorClient()
+pp = pprint.PrettyPrinter(indent=4)
 
 
 def airsim_conn():
@@ -59,6 +62,7 @@ def drone_takeoff(z, duration):
     client.takeoffAsync().join()
     client.moveByVelocityZAsync(0, 0, z, duration, airsim.DrivetrainType.MaxDegreeOfFreedom,
                                 airsim.YawMode(True, 0)).join()
+    client.hoverAsync().join()
     print('airsim_basic_function.py-> Drone takeoff')
 
 
@@ -84,6 +88,7 @@ def capture_single_picture(directory, image_name):
     """
     Description:
         Take one PGN photo and export to assigned directory.
+        To change resolution, go to "C:/Users/dachu/Documents/AirSim/settings.json"
     parameter:
         Input:
             directory: (str) The directory where you want to save the image. Format = './directory_name'
@@ -93,6 +98,8 @@ def capture_single_picture(directory, image_name):
     Link:
         https://stackoverflow.com/questions/57150426/what-is-printf
         https://microsoft.github.io/AirSim/image_apis/#using-airsim-images-with-numpy
+        https://microsoft.github.io/AirSim/settings/
+        https://microsoft.github.io/AirSim/image_apis/
     """
     # Create image directory if it doesn't already exist
     try:
@@ -111,7 +118,7 @@ def capture_single_picture(directory, image_name):
     # reshape array to 4 channel image array H X W X 4
     img_rgb = img1d.reshape(response.height, response.width, 3)
 
-    # original image is fliped vertically
+    # original image is flipped vertically
     img_rgb = np.flipud(img_rgb)
 
     # Flip and rotate image
@@ -122,6 +129,43 @@ def capture_single_picture(directory, image_name):
     cv2.imwrite(f'{directory}/{image_name}.png', img_rgb)
     print('airsim_basic_function.py-> Screenshot Captured!')
     print(f'airsim_basic_function.py-> Store at {directory}/{image_name}.png')
+
+
+def adjust_camera_angle(angle, camera_nametag):
+    """
+    Description:
+
+    parameter:
+        Input:
+
+        Output:
+
+    Link:
+        https://github.com/microsoft/AirSim/blob/master/PythonClient/computer_vision/cv_mode.py
+    """
+    #airsim.wait_key(f"drone_movement.py-> Press any key to set camera-0 gimbal to {angle}-degree pitch")
+    camera_pose = airsim.Pose(airsim.Vector3r(0, 0, 0), airsim.to_quaternion(math.radians(angle), 0, 0))  # radians
+    client.simSetCameraPose(f"{camera_nametag}", camera_pose)
+    #airsim.wait_key('drone_movement.py-> Press any key to get camera parameters')
+    for camera_name in range(5):
+        camera_info = client.simGetCameraInfo(str(camera_name))
+        # print("CameraInfo %d:" % camera_name)
+        # pp.pprint(camera_info)
+
+
+def drone_move_to_position(x, y, z, velocity):
+    """
+    Description:
+
+    parameter:
+        Input:
+
+        Output:
+
+    Link:
+
+    """
+    client.moveToPositionAsync(x, y, -z, velocity).join()
 
 
 '''

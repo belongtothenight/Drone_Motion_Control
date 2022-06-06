@@ -1,5 +1,7 @@
+import numpy as np
 import read_file as rf
 import airsim_basic_function as abf
+import control_algorithm as ca
 
 
 # Read single row of data
@@ -10,21 +12,18 @@ line = rf.read_txt('./test_coordinate/frcnn_test_info.txt', 79)
 distance = rf.line_split(line, 7)
 
 # Take off
+abf.adjust_camera_angle(-42, 0)
 abf.drone_takeoff(-10, 5)
+# abf.capture_single_picture('./captured_image', '1')
 
 # Approach filming location
-'''
-Use center coordinate to adjust detail relative coordinate.
-Use the distance times a value as actual direct 
-distance, and use known altitude, to calculate x and y movement to reach filming coordinate.
-Assume current location are the picture taking coordinate (x,y) 
-'''
+
 
 # Approach target
-'''
-Use data above to locate drone at the top center of car.
-'''
+ca.drone_approach_target(cor[5], cor[4])
+# abf.capture_single_picture('./captured_image', '2')
+
 
 # Landing
+abf.adjust_camera_angle(21, 0)
 abf.drone_landing(10, 5)
-
