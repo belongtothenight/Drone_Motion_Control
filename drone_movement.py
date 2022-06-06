@@ -8,6 +8,11 @@ print('drone_movement.py-> reading coordinate...')
 coordinate = rf.read_csv('./test_coordinate/target_coordinate.csv')
 cor, t_row, t_col = rf.get_csv_data_single_row_adj_element(coordinate, 0, 2, 11)
 
+# Read critical txt data (line 80)
+line = rf.read_txt('./test_coordinate/frcnn_test_info.txt', 79)
+# print('drone_movement.py-> ' + line)
+distance = rf.line_split(line, 7)
+print('drone_movement.py-> Distance: ' + distance)
 
 # Take off
 client = airsim.MultirotorClient()
