@@ -114,15 +114,16 @@ def read_txt(program, line_number):
 def line_split(line, index):
     """
     Description:
-
+        Split line and get specific word out.
     parameter:
         Input:
-
+            line: (str) Splitting string of text.
+            index: (int) The index of target word in line.
         Output:
-
+            txt[index]: (str) Split word.
     Link:
-
+        https://www.w3schools.com/python/ref_string_split.asp
     """
     txt = line.split()
-    #print('read_file.py-> ' + str(txt))
+    # print('read_file.py-> ' + str(txt))
     return txt[index]
