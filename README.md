@@ -1,5 +1,4 @@
 # DroneMotionControl
-### **This program is still under development**
 - Developing start in 2022.06.06 13:20
 - Code version: v3.5.0
 - Author: Dachuan Chen
