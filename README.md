@@ -1,7 +1,7 @@
 # DroneMotionControl
 ### **This program is still under development**
-- Developing start in 2022.06.06 05:10
-- Code version: v3.0.0
+- Developing start in 2022.06.06 09:36
+- Code version: v3.1.0
 - Author: Dachuan Chen
 
 ## Description
@@ -67,4 +67,5 @@ Based on the data generated from FRCNN test, this program shows how the drone wi
 7. v2.2.0 / Add "File Structure" in "README.md".
 8. v2.2.0 / Enable reading data from ".csv" file.
 9. v3.0.0 / Establish "drone_movement.py" work flow.
+10. v3.1.0 / Enable reading data from ".txt" file.
 

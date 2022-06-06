@@ -1,6 +1,4 @@
 import airsim_basic_function as abf
-import control_algorithm as ca
-import read_file as rf
 import subprocess
 import sys
 import os

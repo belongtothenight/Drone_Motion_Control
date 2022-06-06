@@ -87,3 +87,7 @@ def get_csv_data_single_row_adj_element(array, row_number, start_element_number,
     else:
         print('read_file.py-> Parameter Error!!!')
     return coordinate_array, total_row_count, total_column_count
+
+
+def read_txt(program):
+    print('')
