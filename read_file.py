@@ -15,7 +15,7 @@ def read_csv(program):
         https://realpython.com/python-return-statement/
     """
     file = open(program)
-    print('read_file.py-> csv file opened')
+    #print('read_file.py-> csv file opened')
     csvreader = csv.reader(file)
     print('read_file.py-> csv file read')
     rows = []
@@ -70,8 +70,8 @@ def get_csv_data_single_row_adj_element(array, row_number, start_element_number,
     coordinate_array = []
     total_row_count = len(range(len(array)))
     total_column_count = 12
-    #print('read_file.py-> Total row count:' + str(total_row_count))
-    #print('read_file.py-> Total column count:' + str(total_column_count))
+    # print('read_file.py-> Total row count:' + str(total_row_count))
+    # print('read_file.py-> Total column count:' + str(total_column_count))
     i = start_element_number
     if start_element_number >= 0 and end_element_number < total_column_count:
         while start_element_number <= i <= end_element_number:
@@ -87,3 +87,43 @@ def get_csv_data_single_row_adj_element(array, row_number, start_element_number,
     else:
         print('read_file.py-> Parameter Error!!!')
     return coordinate_array, total_row_count, total_column_count
+
+
+def read_txt(program, line_number):
+    """
+    Description:
+
+    parameter:
+        Input:
+            program: (str) The directory and file name of target file.
+            line_number: The line you want to read.
+        Output:
+            line: (str) The last line read by this function.
+    Link:
+        https://www.pythontutorial.net/python-basics/python-read-text-file/
+    """
+    with open(program) as f:
+        for i in range(line_number):
+            line = f.readline()
+            # print('read_file.py-> Line' + str(i) + ': ' + line)
+            i += 1
+        print('read_file.py-> txt file read')
+    return line
+
+
+def line_split(line, index):
+    """
+    Description:
+        Split line and get specific word out.
+    parameter:
+        Input:
+            line: (str) Splitting string of text.
+            index: (int) The index of target word in line.
+        Output:
+            txt[index]: (str) Split word.
+    Link:
+        https://www.w3schools.com/python/ref_string_split.asp
+    """
+    txt = line.split()
+    # print('read_file.py-> ' + str(txt))
+    return txt[index]

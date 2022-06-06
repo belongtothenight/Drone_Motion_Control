@@ -1,43 +1,34 @@
-import airsim
-import pprint
+import numpy as np
 import read_file as rf
+import airsim_basic_function as abf
+import control_algorithm as ca
 
 
-# Read single row of data
-print('drone_movement.py-> reading coordinate...')
+# Read data
+print('drone_movement.py-> gathering data...')
 coordinate = rf.read_csv('./test_coordinate/target_coordinate.csv')
 cor, t_row, t_col = rf.get_csv_data_single_row_adj_element(coordinate, 0, 2, 11)
-'''
-    print_csv_data_single_row_adj_element() function test
-        print('main.py-> coordinate array: ', cor)
-        print('main.py-> total row: ', t_row)
-        print('main.py-> total column: ', t_col)
-    '''
+line1 = rf.read_txt('./test_coordinate/frcnn_test_info.txt', 15)
+frame_count = rf.line_split(line1, 4)
+line2 = rf.read_txt('./test_coordinate/frcnn_test_info.txt', 79)
+distance = rf.line_split(line2, 7)
 
-# Define drone_movement():
-client = airsim.MultirotorClient()
+# Take off
+abf.adjust_camera_angle(-42, 0)
+abf.drone_takeoff(-10, 5)
+abf.capture_single_picture('./captured_image', '1')
 
-# Async methods returns Future. Call join() to wait for task to complete.
-client.takeoffAsync().join()
-print('drone_movement.py-> Drone take off')
+# Approach filming location
+ca.drone_approach_filming_location(frame_count, 1)
+abf.capture_single_picture('./captured_image', '2')
 
-
-# Get drone state
-state = client.getMultirotorState()
-s = pprint.pformat(state)
-print("drone_movement.py-> state: %s" % s)
-
+# Approach target
+ca.drone_approach_target(cor[5], cor[4])
+abf.adjust_camera_angle(-60, 0)
+abf.capture_single_picture('./captured_image', '3')
 
 
-print('drone_movement.py-> Move up...')
-client.moveByVelocityZAsync(0, 0, -10, 10, airsim.DrivetrainType.MaxDegreeOfFreedom, airsim.YawMode(True, 0)).join()
-print('drone_movement.py-> Move right...')
-client.moveByVelocityZAsync(0, 5, 0, 5, airsim.DrivetrainType.MaxDegreeOfFreedom, airsim.YawMode(True, 0)).join()
-print('drone_movement.py-> Move front...')
-client.moveByVelocityZAsync(5, 0, 5, 10, airsim.DrivetrainType.MaxDegreeOfFreedom, airsim.YawMode(True, 0)).join()
-
-client.moveByVelocityZAsync(0, 0, -10, 10, airsim.DrivetrainType.MaxDegreeOfFreedom, airsim.YawMode(True, 0)).join()
-client.moveByVelocityZAsync(0, 5, -10, 10, airsim.DrivetrainType.MaxDegreeOfFreedom, airsim.YawMode(True, 0)).join()
-# z axis number is what each every command needs to maintained.
-
-# client.moveToPositionAsync(-10, 10, -10, 5).join()
+# Landing
+#abf.adjust_camera_angle(0, 0)
+abf.drone_landing(10, 5)
+abf.adjust_camera_angle(0, 0)
