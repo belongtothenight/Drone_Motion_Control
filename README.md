@@ -1,4 +1,5 @@
 # DroneMotionControl
+## !!ATTENTION!! This repo is archived, and will no longer be updated.
 - Developing start in 2022.06.06 23:29
 - Code version: v3.5.1
 - Author: Dachuan Chen
